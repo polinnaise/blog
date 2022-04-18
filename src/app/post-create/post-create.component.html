@@ -1,0 +1,23 @@
+<h1>Add post</h1>
+<form [formGroup]="form" fxLayout="column" (ngSubmit)="submitForm()">
+     <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Body</mat-label>
+        <textarea matInput formControlName="body"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>User</mat-label>
+        <mat-select formControlName="userId">
+                <mat-option value="1">User1</mat-option>
+                <mat-option value="2">User2</mat-option>
+                <mat-option value="3">User3</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="form.invalid">Add post</button>
+</form>
